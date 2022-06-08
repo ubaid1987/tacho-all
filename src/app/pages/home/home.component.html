@@ -1,0 +1,169 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+  
+  <!-- Toolbar -->
+
+  
+  <div class="content" role="main">
+
+    <input type="hidden" #selection>
+  
+    <span class="card-container" *ngIf="monthss && showPage">
+
+
+
+      <section>
+        <!--for demo wrap-->
+
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead style="background-color: #00beee">
+              <tr>
+                <th>Driver Name</th>
+                <th>{{monthss[11]}}</th>
+                <th>{{monthss[10]}}</th>
+                <th>{{monthss[9]}}</th>
+                <th>{{monthss[8]}}</th>
+                <th>{{monthss[7]}}</th>
+                <th>{{monthss[6]}}</th>
+                <th>{{monthss[5]}}</th>
+                <th>{{monthss[4]}}</th>
+                <th>{{monthss[3]}}</th>
+                <th>{{monthss[2]}}</th>
+                <th>{{monthss[1]}}</th>
+                <th>{{monthss[0]}}</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+        
+              <tr *ngFor="let techo of techoGraphData">
+                <td class="cursorname" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
+                <td *ngIf="techo.data[11].name" (click)="downloadFile(techo.data[11].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[11].name">
+                  <div *ngIf="techo.data[11].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[11].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[10].name" (click)="downloadFile(techo.data[10].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[10].name">
+                     <div *ngIf="techo.data[10].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[10].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[9].name" (click)="downloadFile(techo.data[9].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[9].name" >
+                     <div *ngIf="techo.data[9].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[9].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[8].name" (click)="downloadFile(techo.data[8].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[8].name">
+                     <div *ngIf="techo.data[8].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[8].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[7].name" (click)="downloadFile(techo.data[7].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[7].name">
+                     <div *ngIf="techo.data[7].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[7].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[6].name" (click)="downloadFile(techo.data[6].name)">
+                  <div class="circle green"></div>
+                </td>
+        
+                <td *ngIf="!techo.data[6].name">
+                     <div *ngIf="techo.data[6].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[6].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[5].name" (click)="downloadFile(techo.data[5].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[5].name">
+                     <div *ngIf="techo.data[5].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[5].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[4].name" (click)="downloadFile(techo.data[4].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[4].name">
+                     <div *ngIf="techo.data[4].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[4].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[3].name" (click)="downloadFile(techo.data[3].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[3].name">
+                     <div *ngIf="techo.data[3].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[3].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[2].name" (click)="downloadFile(techo.data[2].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[2].name">
+                     <div *ngIf="techo.data[2].colorcode=='red'" class="circle red"></div>
+                  <div *ngIf="techo.data[2].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[1].name" (click)="downloadFile(techo.data[1].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[1].name">
+                     <div *ngIf="techo.data[1].colorcode=='red' && showyellow" class="circle red"></div>
+                     <div *ngIf="techo.data[1].colorcode=='red' && !showyellow" class="circle red"></div>
+                     <div *ngIf="techo.data[1].colorcode=='gray'" class="circle gray"></div>
+                </td>
+                <td *ngIf="techo.data[0].name" (click)="downloadFile(techo.data[0].name)">
+                  <div class="circle green"></div>
+                </td>
+                <td *ngIf="!techo.data[0].name">
+                     <div *ngIf="techo.data[0].colorcode=='red'" class="circle yellow"></div>
+                  <div *ngIf="techo.data[0].colorcode=='gray'" class="circle yellow"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      
+      
+
+
+
+
+
+      
+    
+    </span>
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+  <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  
