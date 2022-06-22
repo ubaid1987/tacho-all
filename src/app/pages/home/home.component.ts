@@ -53,8 +53,11 @@ if(!sid){
 
     this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_resource","propName":"","propValueMask":"","sortType":""},"force":2,"flags":8461,"from":1,"to":0}&sid=' + sessionID).subscribe((res: any) => {
     this.itemID  = res.items[1].id;
-      this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=file/list&sid=' + sessionID + '&params={"itemId":' + res.items[1].id + ',"storageType":2,"path":"/","mask":"","recursive":false,"fullPath":false}').subscribe((res1: any) => {
-
+    console.log(res);
+    
+    this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=file/list&sid=' + sessionID + '&params={"itemId":' + res.items[1].id + ',"storageType":2,"path":"/","mask":"","recursive":false,"fullPath":false}').subscribe((res1: any) => {
+    console.log(res1);
+      
         let drvrs: any = []
         res.items.forEach((element: any) => {
           drvrs.push(element.drvrs)
