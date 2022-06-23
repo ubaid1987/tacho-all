@@ -15,8 +15,11 @@ export class ProfileComponent implements OnInit {
   monthss = [];
 
   header: any = [];
+  headerRev: any =[];
   header1: any = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  header1Rev: any = [];
   techoGraphData: any = [];
+  techoGraphDataRev: any =[];
   itemID = 1;
   sessionID = '';
   showyellow = true;
@@ -137,6 +140,7 @@ export class ProfileComponent implements OnInit {
         } else {
           this.header1[inde].count = this.header1[inde].count + 1;
         }
+        
         fileDetails.forEach((data: any) => {
           let driverdata = String(data.n).split("_")[0];
           if (driverdata.indexOf(techoGraph.id) >= 0) {
@@ -154,6 +158,9 @@ export class ProfileComponent implements OnInit {
         });
         driverData1.push(data1)
       }
+
+
+
       let setCode = 0;
 
       let Datecount = 0;
@@ -190,11 +197,20 @@ export class ProfileComponent implements OnInit {
           }
         }
       });
-      driverData1.reverse();
+      // driverData1.reverse();
       this.techoGraphData[index].data = driverData1;
+      // console.log(this.techoGraphData)
     });
-    // console.log(this.techoGraphData)
-    this.showPage = true;
+    console.log(this.techoGraphData)
+    this.showPage = true; 
+    for (let i = this.header1.length-1; i>=0; i--) {
+              this.header1Rev.push(this.header1[i])
+    }
+    for (let j = this.header.length-1; j>=0; j--) {
+      this.headerRev.push(this.header[j])
+}
+
+
 
   }
 

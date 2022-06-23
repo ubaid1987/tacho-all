@@ -1,0 +1,49 @@
+.mainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+    
+    width: 65%;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: 80px;
+}
+.title{
+    text-align: center;
+    font-size: 20px;
+    color: #FFF;
+    background-color: #00beee;
+    padding: 14px 0px;
+}
+.mainBody{
+    display: flex;
+    justify-content: center;
+    background-color: #d1f0ff;
+    padding-top: 60px;
+    height: 60vh;
+}
+.inputBoxes{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.inputBoxes label{
+    width: 150px;
+    font-size: 20px;
+    padding-right: 80px;
+}
+.inputBoxes input{
+    background: transparent;
+    font-size: 20px;
+    border: 2px solid #00beee;
+    width: 200px;
+    height: 30px;
+}
+input:focus-visible{
+    
+    outline: none !important;
+
+}
