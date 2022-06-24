@@ -120,13 +120,13 @@ export class ProfileComponent implements OnInit {
       for (let index = 0; index <= 365; index++) {
         let oldDate = new Date();
         let newdate = new Date(oldDate);
-        newdate.setDate(oldDate.getDay() - index);
+        newdate.setDate(oldDate.getDate() - index);
         let dateTime = Math.round(newdate.getTime() / 1000);
         let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
         let date2 = new Date(techoGraph.datejoin * 1000);
         if (newdate.getMonth() == date2.getMonth() && newdate.getDate() == date2.getDate()) {
           data1.colorcode = 'blue'
-        }
+        }      
         this.header.push(newdate.getDate())
         if (cM == -1 || cM != newdate.getMonth()) {
           if (cM >= 0) {
@@ -145,6 +145,7 @@ export class ProfileComponent implements OnInit {
           let driverdata = String(data.n).split("_")[0];
           if (driverdata.indexOf(techoGraph.id) >= 0) {
             var d = new Date(data.ct * 1000);
+      
             if (d.getMonth() == newdate.getMonth() && d.getDate() == newdate.getDate()) {
               data1.name = data.n;
               data1.dates = data.ct;
@@ -199,16 +200,19 @@ export class ProfileComponent implements OnInit {
       });
       // driverData1.reverse();
       this.techoGraphData[index].data = driverData1;
-      // console.log(this.techoGraphData)
+      // console.log('driverData1',driverData1)
     });
-    console.log(this.techoGraphData)
+    // console.log('techoGraphData',this.techoGraphData)
     this.showPage = true; 
     for (let i = this.header1.length-1; i>=0; i--) {
               this.header1Rev.push(this.header1[i])
     }
+console.log('header1', this.header1)
+
     for (let j = this.header.length-1; j>=0; j--) {
       this.headerRev.push(this.header[j])
 }
+// console.log('header', this.header)
 
 
 
