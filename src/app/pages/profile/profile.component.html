@@ -53,18 +53,18 @@
     <thead style="background-color: #00beee"  border="1">
       <tr>
         <th border="1"> </th>
-        <th *ngFor="let techo of header1" [attr.colspan]="techo.count" style="text-align:center" border="1">{{techo.month}} - {{techo.year}}
+        <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center" border="1">{{techo.month}} - {{techo.year}}
         </th>
       </tr>
       <tr>
-        <th style="z-index: 8;" style="">Driver Name </th>
-        <th *ngFor="let techo of header">{{techo}}</th>
+        <th style="z-index: 8;" class="fixed">Driver Name </th>
+        <th *ngFor="let techo of headerRev">{{techo}}</th>
       </tr>
     </thead>
     
     <tbody>
       <tr *ngFor="let techo of techoGraphData">
-        <td class="cursorname fixed" style="" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
+        <td class="cursorname fixed" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
         <td *ngFor="let techo1 of techo.data">
           <div class="circle green" *ngIf="techo1.colorcode=='green'" (click)="downloadFile(techo1.name)"></div>
           <div class="circle red" *ngIf="techo1.colorcode=='red'"></div>

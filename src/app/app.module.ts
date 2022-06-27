@@ -17,8 +17,11 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalService } from './modal/modal.service';
 import { ModalComponent } from './modal/modal.component';
+import { InfringementComponent } from './pages/infringement/infringement.component';
+import { CustomerComponent } from './pages/customer/customer.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent,ModalComponent],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent,
+    ModalComponent, InfringementComponent, CustomerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

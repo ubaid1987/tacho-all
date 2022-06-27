@@ -51,10 +51,13 @@ if(!sid){
     let sessionID = this.sessionID;
 
 
-    this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_resource","propName":"","propValueMask":"","sortType":""},"force":2,"flags":8461,"from":1,"to":0}&sid=' + sessionID).subscribe((res: any) => {
-    this.itemID  = res.items[1].id;
-      this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=file/list&sid=' + sessionID + '&params={"itemId":' + res.items[1].id + ',"storageType":2,"path":"/","mask":"","recursive":false,"fullPath":false}').subscribe((res1: any) => {
+    this.http.get('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_resource","propName":"","propValueMask":"","sortType":""},"force":1,"flags":8465,"from":0,"to":0}&sid=' + sessionID).subscribe((res: any) => {
+    this.itemID  = res.items[0].id;
+    // console.log('111111',res);
 
+    this.http.get('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=file/list&sid=' + sessionID + '&params={"itemId":' + res.items[0].id + ',"storageType":2,"path":"/tachograph","mask":"*","recursive":false,"fullPath":false}').subscribe((res1: any) => {
+    // console.log('222222',res1);
+      
         let drvrs: any = []
         res.items.forEach((element: any) => {
           drvrs.push(element.drvrs)
@@ -138,14 +141,15 @@ if(!sid){
       this.techoGraphData[index].data = detailsData;
       this.monthss = monthss;
     });
-    // console.log(this.techoGraphData)
+    console.log(this.techoGraphData)
     this.showPage = true;
 
   }
 
   downloadFile(fileName: any) {
     let sessionID = this.sessionID;
-    window.open('https://hst-api.wialon.com/wialon/ajax.html?svc=file/get&params={"itemId":'+sessionID +',"storageType":2,"path":"/' + fileName + '","format":"1"}')
+    window.open('https://hst-api.wialon.com/wialon/ajax.html?svc=file/get&sid=' + sessionID + '&params={"itemId":' + this.itemID + ',"storageType":2,"path":"/tachograph/' + fileName + '","format":"1"}')
+    // window.open('https://hst-api.wialon.com/wialon/ajax.html?svc=file/get&params={"itemId":'+sessionID +',"storageType":2,"path":"/' + fileName + '","format":"1"}')
     // this.http.get('https://hst-api.wialon.com/wialon/ajax.html?svc=file/get&sid=' + sessionID + '&params={"itemId":'+this.itemID +',"storageType":2,"path":"/tachograph/' + fileName + '","format":"1"}', { responseType: 'blob' }).subscribe((res1: any) => {
     //   var objectUrl = URL.createObjectURL(res1);
     //   var a = document.createElement('a');
