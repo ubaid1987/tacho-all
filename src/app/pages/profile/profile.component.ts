@@ -55,8 +55,6 @@ export class ProfileComponent implements OnInit {
       this.showyellow = false;
     }
     let sessionID = this.sessionID;
-    //https://wialonapp.herokuapp.com/
-
     this.http.get('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_resource","propName":"","propValueMask":"","sortType":""},"force":1,"flags":8465,"from":0,"to":0}&sid=' + sessionID).subscribe((res: any) => {
       this.itemID = res.items[0].id;
       this.http.get('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=file/list&sid=' + sessionID + '&params={"itemId":' + res.items[0].id + ',"storageType":2,"path":"/tachograph","mask":"*","recursive":false,"fullPath":false}').subscribe((res1: any) => {
@@ -74,13 +72,15 @@ export class ProfileComponent implements OnInit {
 
   }
   doProcessData(drvrs: any, fileDetails: any) {
-
     let sessionID = this.sessionID;
     var monthName = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
-
-
-
+    /***
+     * 
+     * Start Populate drivers data 
+     * 
+     * ***/
+     
     drvrs.forEach((element1: any) => {
       let drvrsDetails = Object.keys(element1).map(function (key) { return element1[key]; });
       drvrsDetails.forEach(element => {
@@ -104,29 +104,90 @@ export class ProfileComponent implements OnInit {
       });
     });
 
-
     this.techoGraphData.sort((a: any, b: any) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
 
-    this.techoGraphData.forEach((techoGraph: any, index: any) => {
+    /***
+     * 
+     * Start Populate drivers details data
+     * 
+     * ***/
+      var driver_hash:any = new Map();
+       var driver_data:any = {};
+      
+      /***  create driver data hash */
+      this.techoGraphData.forEach((techoGraph: any, index: any) => {
+        driver_hash.set(techoGraph.id,techoGraph.datejoin)
+      })
+      /***  create driver data hash */
+      
+      let Date1 = new Date();
+      let dateTime = Math.round(Date1.getTime() / 1000);
       let maxdrive = 9991618497441434
-      let monthData = { "January": [], "February": [], "March": [], "April": [], "May": [], "June": [], "July": [], "August": [], "September": [], "October": [], "November": [], "December": "" };
+      
+      fileDetails.forEach((data: any) => {
+        let driver_id = String(data.n).split("_")[0] as string;
+        
+        if (driver_hash.has(driver_id)) {
+            
+            if(driver_id in driver_data ==false)
+              driver_data[driver_id] =new Array();
+            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(driver_id) ? 'gray' : 'red' }
+            data1.name = data.n;
+            data1.mt = data.mt;
+            data1.ct = data.ct;
+            driver_data[driver_id].push(data1)
+          }
 
+        });//end driver_data loop
+    
+     for (let [key1,value1] of driver_hash) {
+          if(key1 in  driver_data ==false){
+            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(key1) ? 'gray' : 'red' }
+            driver_data[key1] =new Array();
+            driver_data[key1].push(data1)
+          }
+     }
+    for(let val in driver_data){
+      let dd= driver_data[val]
+     // let dd1= [...driver_data[val]]
+   
+     dd.sort((a:any, b:any) => {
+            return a.mt - b.mt;
+          });
+
+    }
+    console.log(driver_data)
+    for(let did in driver_data){
+        for(let val in driver_data[did]){
+          let dobj = driver_data[did][val]
+          var d = new Date(dobj.mt * 1000);
+          console.log(dobj.name,d.getDate(),d.getMonth(),d.getFullYear()) 
+
+      }
+    }
+    /***
+     * 
+     * End Populate drivers details data
+     * 
+     * ***/
+     this.techoGraphData.forEach((techoGraph: any, index: any) => {
+      let maxdrive = 9991618497441434
+     
       let driverData1: any = [];
       this.header = [];
-      //let oldDate1 = new Date();
-      let cM = -1;
+       let cM = -1;
       let inde = 0;
       this.header1 = [{ count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }, { count: 0,  month: '' ,year:'' }];
-      for (let index = 0; index <= 365; index++) {
+       for (let index = 0; index <= 365; index++) {
         let oldDate = new Date();
         let newdate = new Date(oldDate);
         newdate.setDate(oldDate.getDate() - index);
         let dateTime = Math.round(newdate.getTime() / 1000);
-        let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
+        let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
         let date2 = new Date(techoGraph.datejoin * 1000);
-        if (newdate.getMonth() == date2.getMonth() && newdate.getDate() == date2.getDate()) {
-          data1.colorcode = 'blue'
-        }      
+        // if (newdate.getMonth() == date2.getMonth() && newdate.getDate() == date2.getDate()) {
+        //   //data1.colorcode = 'blue'
+        // }      
         this.header.push(newdate.getDate())
         if (cM == -1 || cM != newdate.getMonth()) {
           if (cM >= 0) {
@@ -141,27 +202,31 @@ export class ProfileComponent implements OnInit {
           this.header1[inde].count = this.header1[inde].count + 1;
         }
         
-        fileDetails.forEach((data: any) => {
-          let driverdata = String(data.n).split("_")[0];
-          if (driverdata.indexOf(techoGraph.id) >= 0) {
-            var d = new Date(data.ct * 1000);
-      
-            if (d.getMonth() == newdate.getMonth() && d.getDate() == newdate.getDate()) {
-              data1.name = data.n;
-              data1.dates = data.ct;
-              data1.filepresent = true;
-              data1.colorcode = 'green';
-              if (data.ct < maxdrive) {
-                maxdrive = data.ct;
-              }
-            }
+       for (let key in driver_data[techoGraph.id]){
+          let dobj = driver_data[techoGraph.id][key];
+          var d = new Date(dobj.mt * 1000);
+         
+            let cmonth = newdate.getMonth()+1
+
+          if (d.getMonth() == cmonth && d.getDate() == newdate.getDate() && d.getFullYear() == newdate.getFullYear()) {
+            data1.filepresent = true;
+            data1.colorcode = 'green';
+            data1.name = dobj.name;
+            let d1 = new Date(dobj.mt *1000);
+            data1.dates = String(d1.getDate())+' '+String(d1.getMonth());
+            data1.filepresent = true;
+            data1.colorcode = 'green';
+            if (dobj.ct < maxdrive) {
+              maxdrive = dobj.ct;
+            } 
           }
-        });
+       
+        }
+       
         driverData1.push(data1)
-      }
 
-
-
+      }//end 365 days loop
+      driverData1.reverse();
       let setCode = 0;
 
       let Datecount = 0;
@@ -175,10 +240,10 @@ export class ProfileComponent implements OnInit {
           if (setCode && element.colorcode != 'green') {
             Datecount++;
             driverData1[pos].colorcode = 'red';
-            if (Datecount > 15 && Datecount < 28) {
+            if (Datecount > 14 && Datecount <= 27) {
               driverData1[pos].colorcode = 'yellow';
             }
-            if (Datecount <= 15) {
+            if (Datecount <= 14) {
               driverData1[pos].colorcode = 'nocolor';
             }
           }
@@ -189,25 +254,34 @@ export class ProfileComponent implements OnInit {
           }
           if (setCode) {
             Datecount++;
-            if (Datecount > 15 && Datecount < 28) {
+            if (Datecount > 14 && Datecount <= 27) {
               driverData1[pos].colorcode = 'yellow';
             }
-            if (Datecount <= 15) {
+            if (Datecount <= 14) {
               driverData1[pos].colorcode = 'nocolor';
             }
           }
         }
       });
-      // driverData1.reverse();
+
+      
+
       this.techoGraphData[index].data = driverData1;
       // console.log('driverData1',driverData1)
-    });
+    });//end driver loop
+
+    /***
+     * 
+     * End Populate drivers data
+     * 
+     * ***/
+
     // console.log('techoGraphData',this.techoGraphData)
     this.showPage = true; 
     for (let i = this.header1.length-1; i>=0; i--) {
               this.header1Rev.push(this.header1[i])
     }
-console.log('header1', this.header1)
+//console.log('header1', this.header1)
 
     for (let j = this.header.length-1; j>=0; j--) {
       this.headerRev.push(this.header[j])
