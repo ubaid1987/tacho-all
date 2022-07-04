@@ -206,7 +206,7 @@ export class ProfileComponent implements OnInit {
           let dobj = driver_data[techoGraph.id][key];
           var d = new Date(dobj.mt * 1000);
          
-            let cmonth = newdate.getMonth()+1
+            let cmonth = newdate.getMonth()
 
           if (d.getMonth() == cmonth && d.getDate() == newdate.getDate() && d.getFullYear() == newdate.getFullYear()) {
             data1.filepresent = true;
