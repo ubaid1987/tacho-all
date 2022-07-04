@@ -236,6 +236,10 @@ display: none;
 table{
 border-collapse: collapse;
 text-align: left;
+// float:right !important;
+// display:block;
+// overflow:scroll;
+// white-space: nowrap;
 
 
 td, th{
@@ -246,6 +250,7 @@ td, th{
 td{
   border-left: 1px solid #ECF0F1;
   border-right: 1px solid #ECF0F1;
+  
 }
 
 th{
@@ -264,6 +269,7 @@ tr:nth-of-type(even) td{
   td{
     text-align: right;
     font-weight: 400;
+    
   }
 }
 }
@@ -334,6 +340,10 @@ table{
   }
 }
 }
+// table, td {
+//   border: 1px solid black;
+//   float:right !important;
+// }
 
 @media only screen and (max-width: 300px){
 table{
