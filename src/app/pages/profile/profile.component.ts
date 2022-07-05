@@ -131,7 +131,8 @@ export class ProfileComponent implements OnInit {
             
             if(driver_id in driver_data ==false)
               driver_data[driver_id] =new Array();
-            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(driver_id) ? 'gray' : 'red' }
+          //  let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(driver_id) ? 'gray' : 'red' }
+            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
             data1.name = data.n;
             data1.mt = data.mt;
             data1.ct = data.ct;
@@ -142,7 +143,8 @@ export class ProfileComponent implements OnInit {
     
      for (let [key1,value1] of driver_hash) {
           if(key1 in  driver_data ==false){
-            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(key1) ? 'gray' : 'red' }
+          //  let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(key1) ? 'gray' : 'red' }
+            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode:  'gray' }
             driver_data[key1] =new Array();
             driver_data[key1].push(data1)
           }
@@ -183,7 +185,8 @@ export class ProfileComponent implements OnInit {
         let newdate = new Date(oldDate);
         newdate.setDate(oldDate.getDate() - index);
         let dateTime = Math.round(newdate.getTime() / 1000);
-        let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
+       // let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
+        let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: 'gray' }
         let date2 = new Date(techoGraph.datejoin * 1000);
         // if (newdate.getMonth() == date2.getMonth() && newdate.getDate() == date2.getDate()) {
         //   //data1.colorcode = 'blue'
