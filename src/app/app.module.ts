@@ -15,6 +15,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { HelpComponent } from './pages/help/help.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { ModalService } from './modal/modal.service';
 import { ModalComponent } from './modal/modal.component';
 import { InfringementComponent } from './pages/infringement/infringement.component';
@@ -32,6 +35,8 @@ import { CustomerComponent } from './pages/customer/customer.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    CommonModule,
+    FormsModule,
   ],
   providers: [ModalService],
   bootstrap: [AppComponent],
