@@ -8,27 +8,17 @@
           <th>SHORT DESCRIPTION</th>
         </tr>
         <tr>
-        
-          <tr>
-          <td>Apeddu Giovanni</td>
-          <td>07/03/2021</td>
-          <td>10:45</td>
-          <td>Riposo settimanale inferiore a 
-            45h</td>
+          <tr *ngFor="let doc of docs">
+          <td>{{doc.driver_name}}</td>
+          <td>{{doc.driver_date}}</td>
+          <td>{{doc.driver_time}}</td>
+          <td>{{doc.driver_description}}
+
+          </td>
         </tr>
-          <tr>
-          <td>text</td>
-          <td>text</td>
-          <td>text</td>
-          <td>text</td>
-        </tr>
-          <tr>
-          <td>text</td>
-          <td>text</td>
-          <td>text</td>
-          <td>text</td>
-        </tr>
-         
+         <tr *ngIf="totalRecords==0">
+          <td colspan="4">Loading Driver Report Data</td>
+         </tr>
          
       </table>
 </div>
