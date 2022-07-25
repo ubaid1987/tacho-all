@@ -19,4 +19,14 @@ export class ModalComponent implements OnInit {
     close(event:any) {
         this.closeModal.emit(event);
     }
-}
+    print(e:any){
+        var printContent = document.getElementById('modal-inf');
+        var WinPrint:any = window.open('', '', 'width=900,height=650');
+        WinPrint.document.write(printContent?.innerHTML);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+
+    }
+} 

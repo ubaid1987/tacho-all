@@ -1,10 +1,9 @@
-<div class="modal">
+<div class="modal" >
 	<div class="modal-overlay" (click)="close($event)"></div>
-	<div class="modal--modal-content">
-		<!-- <h2 [innerHTML]="modalTitle"></h2>
-		<div [innerHTML]="modalText"></div> -->
+	<div class="modal--modal-content" *ngIf="modalTitle!='Infringement'">
 		<a class="modal--close-btn" (click)="close($event)">X</a>
-		<div class="tbl-header" *ngIf="modalText">
+
+		<div class="tbl-header"  >
 			<table cellpadding="0" cellspacing="0" border="0">
 				<thead style="background-color: #00beee">
 					<tr>
@@ -71,5 +70,59 @@
 		</div>
 	</div>
 
+
+	<div class="modal--modal-content-inf" *ngIf="modalTitle=='Infringement'" >
+		<a class="modal--close-btn" (click)="close($event)">X</a>
+		<a class="modal--close-btn1 print" (click)="print($event)"></a>
+		<div id="modal-inf">
+			<div class="tbl-header"  >
+				<table cellpadding="0" cellspacing="0" border="0" class="infringement">
+					<thead >
+						<tr>
+							<th colspan="4" class="title">INFRINGEMENT AND SANCTIONS</th>
+						</tr>
+						<tr>
+							<td>Account name</td>
+							<td>{{modalText.account_name}}</td>
+							<td>Company name</td>
+							<td>{{modalText.company_name}}</td>
+						</tr>
+						<tr>
+							<td>Inspecter name</td>
+							<td>{{modalText.inspecter_name}}</td>
+							<td>Site</td>
+							<td>{{modalText.site_name}}</td>
+						</tr>
+						<tr>
+							<td>Driver name</td>
+							<td>{{modalText.driver_name}}</td>
+							<td>Card number</td>
+							<td>{{modalText.driver_card}}</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="tbl-content">
+				<table cellpadding="0" cellspacing="0" border="0" style="background-color: #00beee" class="infringement">
+					<tbody >
+						
+						<tr>
+							<td>Date of the Infringement</td>
+							<td>{{modalText.driver_date}}</td>
+							<td>Time of the Infringement</td>
+							<td>{{modalText.driver_time}}</td>
+						</tr>
+						<tr>
+							<td>Description</td>
+							<td>{{modalText.driver_description}}</td>
+						</tr>
+						<tr>
+							<td colspan="4"><img src="{{modalText.driver_description_image}}" width="500px"/></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
 </div>
