@@ -9,15 +9,18 @@
         </tr>
         <tr>
           <tr *ngFor="let doc of docs">
-          <td>{{doc.driver_name}}</td>
+          <td class="cursorname" (click)="openModal($event, 'Infringement', doc)">{{doc.driver_name}}</td>
           <td>{{doc.driver_date}}</td>
           <td>{{doc.driver_time}}</td>
           <td>{{doc.driver_description}}
 
           </td>
         </tr>
-         <tr *ngIf="totalRecords==0">
+         <tr *ngIf="totalRecords==-1">
           <td colspan="4">Loading Driver Report Data</td>
+         </tr>
+         <tr *ngIf="totalRecords==0">
+          <td colspan="4">Record not found</td>
          </tr>
          
       </table>
