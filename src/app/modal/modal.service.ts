@@ -1,3 +1,4 @@
+
 import { ComponentFactoryResolver, Injectable, ViewContainerRef } from "@angular/core";
 import { ModalComponent } from "./modal.component";
 
@@ -27,3 +28,4 @@ export class ModalService {
         component.destroy();
     }
 }
+

@@ -16,6 +16,8 @@ table {
   th, td {
     // border: 1px solid #ccc;
     padding: 8px;
+    text-align:center;
+
   }
   
   tr:nth-child(even) {
@@ -24,4 +26,9 @@ table {
   
   tr:hover {
     background: #d1d1d1;
+  }
+  .cursorname{
+    cursor: pointer;
+    max-width: 200px;
+    min-width: 200px;
   }
