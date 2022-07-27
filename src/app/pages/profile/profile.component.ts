@@ -125,18 +125,34 @@ export class ProfileComponent implements OnInit {
       let maxdrive = 9991618497441434
       
       fileDetails.forEach((data: any) => {
-        let driver_id = String(data.n).split("_")[0] as string;
+        //let driver_id = String(data.n).split("_")[0] as string;
+        let driver_id:any ='' 
+        let is_driver_id:any = false
+        for (let [key2,value1] of driver_hash) {
+          const tmp_did = String(data.n)
+          const did_len = key2.length
+          driver_id =   tmp_did.substring(0,did_len)
+          if(driver_id==key2){
+            is_driver_id=true
+            //console.log('hask key',key2,'chk did',driver_id)
+
+          }
+
+        }
         
-        if (driver_hash.has(driver_id)) {
+        //if (driver_hash.has(driver_id)) {
+        if (is_driver_id==true) {
             
             if(driver_id in driver_data ==false)
               driver_data[driver_id] =new Array();
-          //  let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: dateTime > driver_hash.get(driver_id) ? 'gray' : 'red' }
-            let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
+             let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
             data1.name = data.n;
             data1.mt = data.mt;
             data1.ct = data.ct;
             driver_data[driver_id].push(data1)
+          } else{
+            console.log('driverid',data.n)
+
           }
 
         });//end driver_data loop
@@ -185,12 +201,7 @@ export class ProfileComponent implements OnInit {
         let newdate = new Date(oldDate);
         newdate.setDate(oldDate.getDate() - index);
         let dateTime = Math.round(newdate.getTime() / 1000);
-       // let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: dateTime > techoGraph.datejoin ? 'gray' : 'red' }
-        let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: 'gray' }
-        let date2 = new Date(techoGraph.datejoin * 1000);
-        // if (newdate.getMonth() == date2.getMonth() && newdate.getDate() == date2.getDate()) {
-        //   //data1.colorcode = 'blue'
-        // }      
+         let data1 = { month: monthName[newdate.getMonth()], date: newdate.getDate(), filepresent: false, name: '',ct:'',mt:'', dates: '', colorcode: 'gray' }
         this.header.push(newdate.getDate())
         if (cM == -1 || cM != newdate.getMonth()) {
           if (cM >= 0) {

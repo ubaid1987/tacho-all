@@ -129,7 +129,7 @@ description_data:any={}
       formData0.append('sid', this.sessionID);
       this.http.post('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=core/batch&sid=' + this.sessionID, formData0).subscribe((res0: any) => {
         var formData0: any = new FormData();
-         formData0.append('params','{"reportResourceId":'+this.itemID+',"reportTemplateId":'+this.reportID+',"reportTemplate":null,"reportObjectId":'+this.itemID+',"reportObjectSecId":"'+this.drivergroupID+'","interval":{"flags":16777256,"from":0,"to":2},"remoteExec":1}');
+         formData0.append('params','{"reportResourceId":'+this.itemID+',"reportTemplateId":'+this.reportID+',"reportTemplate":null,"reportObjectId":'+this.itemID+',"reportObjectSecId":"'+this.drivergroupID+'","interval":{"flags":16777256,"from":0,"to":12},"remoteExec":1}');
          formData0.append('sid', this.sessionID);
          this.http.post('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=report/exec_report&sid=' + this.sessionID, formData0).subscribe((res0: any) => {
                 var formData0: any = new FormData();
