@@ -134,15 +134,14 @@ export class ProfileComponent implements OnInit {
           driver_id =   tmp_did.substring(0,did_len)
           if(driver_id==key2){
             is_driver_id=true
-            //console.log('hask key',key2,'chk did',driver_id)
-
+            break;
           }
 
         }
         
         //if (driver_hash.has(driver_id)) {
         if (is_driver_id==true) {
-            
+             console.log('driverid',driver_id, data.n) 
             if(driver_id in driver_data ==false)
               driver_data[driver_id] =new Array();
              let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
@@ -150,10 +149,10 @@ export class ProfileComponent implements OnInit {
             data1.mt = data.mt;
             data1.ct = data.ct;
             driver_data[driver_id].push(data1)
-          } else{
+        } else{
             console.log('driverid',data.n)
 
-          }
+        }
 
         });//end driver_data loop
     
