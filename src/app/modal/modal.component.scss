@@ -115,8 +115,8 @@ table{
 .infringement{
   td{
     color:#fff;
-    background-color: #00beee;
   }
+  background-color: #00beee;
 
 }
 .print {
@@ -129,9 +129,70 @@ table{
 #modal-tb-inf{
   margin-top:10%;
 }
-// @media print {
-//   #left-tb-1 {
-//     display: none;
-//   }
-// }
+@media print {
+  
+    table{
+      width:100% !important;
+      table-layout: fixed !important;
+      -webkit-print-color-adjust: exact; 
+
+    }
+    .tbl-header{
+      background-color: rgba(255,255,255,0.3) !important;
+      margin-top:1.5% !important;
+      -webkit-print-color-adjust: exact; 
+    }
+    .tbl-content{
+
+      overflow-x:auto !important;
+      margin-top: 0px !important;
+      border: 1px solid rgba(255,255,255,0.3) !important;
+      -webkit-print-color-adjust: exact; 
+
+    }
+    th{
+      padding: 20px 15px !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      font-size: 12px !important;
+      color: #000 !important;
+      text-transform: uppercase !important;
+      border-bottom: solid 1px rgba(255,255,255,0.1) !important;
+      -webkit-print-color-adjust: exact; 
+
+
+    }
+    td{
+      padding: 15px !important;
+      text-align: left !important;
+      vertical-align:middle !important;
+      font-weight: 500 !important;
+      font-size: 13px !important;
+      color: #000 !important;
+      border-bottom: solid 1px rgba(255,255,255,0.1) !important;
+      text-align:center !important;
+      -webkit-print-color-adjust: exact; 
+
+    }
+    .title{
+      text-align: center !important;
+      font-size: 20px !important;
+      color: #FFF !important;
+      background-color: #00beee !important;
+      padding: 14px 0px !important;
+      -webkit-print-color-adjust: exact; 
+
+    }
+    .infringement{
+        td{
+          color:#fff !important;
+          -webkit-print-color-adjust: exact; 
+
+         
+        }
+        background-color: #00beee !important;
+        -webkit-print-color-adjust: exact; 
+
+    }
+}
 
