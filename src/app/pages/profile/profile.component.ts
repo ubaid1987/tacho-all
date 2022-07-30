@@ -63,12 +63,11 @@ export class ProfileComponent implements OnInit {
         res.items.forEach((element: any) => {
           drvrs.push(element.drvrs)
         });
-
+        
         // console.log('drvrs')
         this.doProcessData(drvrs, res1);
       })
     })
-
 
   }
   doProcessData(drvrs: any, fileDetails: any) {
@@ -80,16 +79,19 @@ export class ProfileComponent implements OnInit {
      * Start Populate drivers data 
      * 
      * ***/
-     
+     //console.log(drvrs.length)
     drvrs.forEach((element1: any) => {
-      let drvrsDetails = Object.keys(element1).map(function (key) { return element1[key]; });
+      let drvrsDetails = Object.keys(element1).map(function (key) { 
+        
+        return element1[key];
+       });
       drvrsDetails.forEach(element => {
 
-        if (String(element.c).length < 14 && element.c) {
-          for (let index = 0; index < 14 - String(element.c).length; index++) {
+        // if (String(element.c).length < 14 && element.c) {
+        //   for (let index = 0; index < 14 - String(element.c).length; index++) {
 
-          }
-        }
+        //   }
+        // }
 
         this.techoGraphData.push({
           name: element.n, id: element.c, data: {}, datejoin: element.ct, joindate: new Date(element.ct * 1000), phone: element.p, desc: element.ds, cardExpiry: element.jp && element.jp['Scadenza Tessera Autista'] ? element.jp['Scadenza Tessera Autista'] : ''
@@ -101,6 +103,7 @@ export class ProfileComponent implements OnInit {
           Scadenzacarta: element.jp && element.jp['Scadenza carta'] ? element.jp['Scadenza carta'] : '',
           Ruolonellazienda: element.jp && element.jp['Ruolo nellazienda'] ? element.jp['Ruolo nellazienda'] : ''
         });
+       
       });
     });
 
@@ -116,8 +119,13 @@ export class ProfileComponent implements OnInit {
       
       /***  create driver data hash */
       this.techoGraphData.forEach((techoGraph: any, index: any) => {
-        driver_hash.set(techoGraph.id,techoGraph.datejoin)
+        driver_hash.set(techoGraph.id,techoGraph.name)
       })
+      console.log(driver_hash.size)
+      console.log(driver_hash)
+      console.log(this.techoGraphData.length)
+      console.log(this.techoGraphData)
+
       /***  create driver data hash */
       
       let Date1 = new Date();
@@ -128,16 +136,20 @@ export class ProfileComponent implements OnInit {
         //let driver_id = String(data.n).split("_")[0] as string;
         let driver_id:any ='' 
         let is_driver_id:any = false
+        let inc=0;
         for (let [key2,value1] of driver_hash) {
           const tmp_did = String(data.n)
           const did_len = key2.length
           driver_id =   tmp_did.substring(0,did_len)
           if(driver_id==key2){
             is_driver_id=true
-            break;
+            //break;
           }
+          inc++
+          console.log('key2',key2,'length',did_len, data.n) 
 
         }
+        console.log(inc)
         
         //if (driver_hash.has(driver_id)) {
         if (is_driver_id==true) {
