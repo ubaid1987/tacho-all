@@ -138,22 +138,24 @@ export class ProfileComponent implements OnInit {
         let is_driver_id:any = false
         let inc=0;
         for (let [key2,value1] of driver_hash) {
-          const tmp_did = String(data.n)
-          const did_len = key2.length
-          driver_id =   tmp_did.substring(0,did_len)
-          if(driver_id==key2){
+          let tmp_did = String(data.n)
+          let did_len = key2.length
+          let tmp_driver_id =   tmp_did.substring(0,did_len)
+          if(tmp_driver_id==key2 && tmp_driver_id !=''){
+            driver_id =  tmp_driver_id 
             is_driver_id=true
             //break;
+            console.log('key2',key2,'length',did_len, data.n,'tmp_dd',driver_id) 
           }
           inc++
-          console.log('key2',key2,'length',did_len, data.n) 
+         // console.log('key2',key2,'length',did_len, data.n,'tmp_dd',driver_id) 
 
         }
-        console.log(inc)
+        //console.log(inc)
         
         //if (driver_hash.has(driver_id)) {
         if (is_driver_id==true) {
-             console.log('driverid',driver_id, data.n) 
+             console.log('new driverid',driver_id, data.n) 
             if(driver_id in driver_data ==false)
               driver_data[driver_id] =new Array();
              let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
@@ -162,7 +164,7 @@ export class ProfileComponent implements OnInit {
             data1.ct = data.ct;
             driver_data[driver_id].push(data1)
         } else{
-            console.log('driverid',data.n)
+            console.log('new driverid',data.n)
 
         }
 
