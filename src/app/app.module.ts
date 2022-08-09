@@ -22,9 +22,10 @@ import { ModalService } from './modal/modal.service';
 import { ModalComponent } from './modal/modal.component';
 import { InfringementComponent } from './pages/infringement/infringement.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { UnitComponent } from './pages/unit/unit.component';
 @NgModule({
   declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent,
-    ModalComponent, InfringementComponent, CustomerComponent],
+    ModalComponent, InfringementComponent, CustomerComponent,UnitComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
