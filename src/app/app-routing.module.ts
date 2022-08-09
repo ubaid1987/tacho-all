@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { InfringementComponent } from './pages/infringement/infringement.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UnitComponent } from './pages/unit/unit.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'unit',
+    component: UnitComponent,
   },
   {
     path: 'help',
