@@ -1,16 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-<!-- Toolbar -->
-
 
 <div class="content1" role="main">
 
@@ -55,11 +42,13 @@
         <th border="1"> </th>
         <th *ngFor="let techo of header1Rev" [attr.colspan]="techo.count" style="text-align:center" border="1">{{techo.month}} - {{techo.year}}
         </th>
+        <th>  SERIE DI "X" </th>
+
       </tr>
       <tr>
         <th style="z-index: 8;" class="fixed">Vehicles</th>
         <th *ngFor="let techo of headerRev">{{techo}}</th>
-        <!-- <th>&nbsp;</th> -->
+        <th></th>
       </tr>
     </thead>
     
@@ -68,13 +57,20 @@
         <td class="cursorname fixed" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
         <td *ngFor="let techo1 of techo.data">
           <div class=" green" *ngIf="techo1.colorcode=='green'" (click)="downloadFile(techo1.id,techo1.name)"></div>
-          <div class=" red" *ngIf="techo1.colorcode=='red'"></div>
-          <div class=" gray" *ngIf="techo1.colorcode=='gray'"></div>
+          <!-- <div class=" red" *ngIf="techo1.colorcode=='red'"></div> -->
+          <img src="../../../assets/red-i.png" alt="" *ngIf="techo1.colorcode=='red'" width="20">
+          <!-- <div class=" gray" *ngIf="techo1.colorcode=='gray'"></div> -->
+          <img src="../../../assets/green_1.png" alt="" *ngIf="techo1.colorcode=='gray'" width="20">
+
           <div class=" blue" *ngIf="techo1.colorcode=='blue'"></div>
-          <div class=" yellow" *ngIf="techo1.colorcode=='yellow'"></div>
+          <!-- <div class=" yellow" *ngIf="techo1.colorcode=='yellow'"></div> -->
+          <img src="../../../assets/yellow-i.png" alt="" *ngIf="techo1.colorcode=='yellow'" width="20">
+
           <div class=" orange" *ngIf="techo1.colorcode=='nocolor'"></div>
         </td>
-        <td class="error-count">{{techo.errorCount}} SERIE DI "X"</td>
+        <td class="error-count" style="font-size: 10px;">{{techo.errorCount}} 
+          <input class="focus" autofocus  type="text">
+        </td>
 
       </tr>
     </tbody>

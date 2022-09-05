@@ -1,25 +1,30 @@
 .mainDiv{
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    // margin-top: 80px;
 }
 
 table {
     border-collapse: collapse;
+    width: 100%;
   }
    th {
-    background: #00beee;
+    background: #d9eaf4;
     color: #fff;
     font-weight: 500;
+    font-size: 14px;
   }
   
   th, td {
     // border: 1px solid #ccc;
     padding: 8px;
     text-align:center;
+    color: #000;
 
   }
-  
+  td{
+    font-size: 13px;
+  }
   tr:nth-child(even) {
     background: #efefef;
   }

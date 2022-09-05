@@ -52,7 +52,7 @@ description_data:any={}
       // Store
       sessionStorage.setItem('sid', sid);
     }
-    this.sessionID = sid ? sid : sessionStorage.getItem('sid');
+    // this.sessionID = sid ? sid : sessionStorage.getItem('sid');
   
   
     this.description_data['Exceeded daily driving time of 9 h']= 'https://topfly.pro/wp-content/uploads/2022/04/Exceeded-daily-driving-time-of-9-h.png'
@@ -72,8 +72,7 @@ description_data:any={}
 
 
   ngOnInit() {
-   
-        let sessionID = this.sessionID;
+      let sessionID = this.sessionID;
         /**
          * Get Item ID
          */

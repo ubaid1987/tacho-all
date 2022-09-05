@@ -48,7 +48,7 @@ if(!sid){
     if (d.getDate() > 20) {
       this.showyellow = false;
     }
-    let sessionID = this.sessionID;
+    let sessionID = '020fd5ec278ffe1694edb41009aca165' //this.sessionID;
 
 
     this.http.get('https://wialonapp.herokuapp.com/https://hst-api.wialon.com/wialon/ajax.html?svc=core/search_items&params={"spec":{"itemsType":"avl_resource","propName":"","propValueMask":"","sortType":""},"force":1,"flags":8465,"from":0,"to":0}&sid=' + sessionID).subscribe((res: any) => {

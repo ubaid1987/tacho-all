@@ -12,7 +12,7 @@
   <!-- Toolbar -->
 
   
-  <div class="content" role="main">
+  <div role="main">
 
     <input type="hidden" #selection>
   
@@ -23,9 +23,7 @@
       <section>
         <!--for demo wrap-->
 
-        <div class="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
-            <thead style="background-color: #00beee">
               <tr>
                 <th>Driver Name</th>
                 <th>{{monthss[11]}}</th>
@@ -41,12 +39,8 @@
                 <th>{{monthss[1]}}</th>
                 <th>{{monthss[0]}}</th>
               </tr>
-            </thead>
-          </table>
-        </div>
-        <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
+       
+         
         
               <tr *ngFor="let techo of techoGraphData">
                 <td class="cursorname" (click)="openModal($event, 'Hello Modal', techo)">{{techo.name}}</td>
@@ -137,9 +131,7 @@
                   <div *ngIf="techo.data[0].colorcode=='gray'" class="circle yellow"></div>
                 </td>
               </tr>
-            </tbody>
-          </table>
-        </div>
+            </table>
       </section>
       
       

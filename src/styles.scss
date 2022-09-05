@@ -1,19 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
-
-html,
-body {
-    height: 100%;
-}
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-    margin: 0;
-}
+@font-face {
+    font-family: primaryFont;
+    src: url(fonts/Montserrat/static/Montserrat-Regular.ttf);
+  }
+  .name{
+    font-family: primaryFont;
+  }
+  p,h1,h2,h3,h4,h5,h6,a,th,td{
+    font-family: primaryFont;
+  }
+  .mat-drawer-content{
+    overflow: unset !important;
+  }
+  body{
+    overflow: hidden;
+  }
+  .content{
+    height: calc(100vh - 85px);
+    overflow: auto;
+    height: calc(100vh - 104px);
+    margin: 10px;
+    background: white;
+    /* padding: 12px; */
+    box-shadow: 0px 0px 2px 2px #00000000;
+    border-radius: 3px;
+  }
+  .nav-active{
+    color: #00bbf9 !important;
+    border-left: 4px solid;
+  }
+  .focus{
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 0;
+  }
+  @media only screen and (max-width : 991px) {
+    .mat-drawer-transition .mat-drawer-content{
+      margin-left: 0 !important;
+    }
+  }

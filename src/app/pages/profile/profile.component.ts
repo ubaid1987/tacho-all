@@ -2,15 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalService } from 'src/app/modal/modal.service';
-
-
+import {AfterViewInit, Directive,ElementRef} from '@angular/core'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
 
   monthss = [];
 
@@ -25,7 +23,7 @@ export class ProfileComponent implements OnInit {
   showyellow = true;
   showPage = false;
   constructor(public http: HttpClient, private sanitizer: DomSanitizer, private modalService: ModalService,
-    private viewContainerRef: ViewContainerRef) {
+    private viewContainerRef: ViewContainerRef,private elementRef: ElementRef) {
     const queryParams = window.location.search;
     const searchParams = new URLSearchParams(queryParams);
     let sid: any = searchParams.get('sid');
@@ -331,4 +329,7 @@ export class ProfileComponent implements OnInit {
     this.modalService.setRootViewContainerRef(this.viewContainerRef);
     this.modalService.addDynamicComponent(modalTitle, modalText);
   }
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.focus();
+}
 }
