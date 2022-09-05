@@ -1,3 +1,437 @@
+// #content {
+//   margin: 40px auto;
+//   text-align: center;
+//   width: 600px;
+// }
+// #content h1 {
+//   text-transform: uppercase;
+//   font-weight: 700;
+//   margin: 0 0 40px 0;
+//   font-size: 25px;
+//   line-height: 30px;
+// }
+// .circle {
+//   width: 15px;
+//   height: 15px;
+//   line-height: 20px;
+//   border-radius: 50%; /* the magic */
+//   -moz-border-radius: 50%;
+//   -webkit-border-radius: 50%;
+//   text-align: center;
+//   color: white;
+//   font-size: 16px;
+//   text-transform: uppercase;
+//   font-weight: 700;
+//   margin: 10px auto 10px;
+//   cursor: pointer;
+
+//   // display: inline-block;
+//   // transform: rotate(45deg);
+//   // height: 25px;
+//   // width: 12px;
+//   // margin-left: 60%; 
+//   // border-bottom: 7px solid #78b13f;
+//   // border-right: 7px solid #78b13f;
+// }
+// .red {
+//     width: 21px;
+//     height: 21px;
+//     background-image: url("../../../assets/red.png"); 
+//     background-size: cover;
+    
+//   }
+//   .green {
+    
+//     width: 21px;
+//     height: 21px;
+//     background-image: url("../../../assets/green.png");
+//     background-size: cover;
+//     cursor: pointer;
+//   }
+//   .gray {
+  
+//     width: 21px;
+//     height: 21px;
+//     background-color: #797979;
+//     // background-image: url("../../../assets/gray.png");
+//     background-size: cover;
+
+
+//   }
+//   .blue {
+//     width: 21px;
+//     height: 21px;
+//     background-size: cover;
+//     background-image: url("../../../assets/blue.png");
+
+//   }
+//   .orange {
+//    // background-color: #fff;
+//   }
+//   .yellow {
+//     width: 21px;
+//     height: 21px;
+//     background-image: url("../../../assets/yellow.png");
+//     background-size: cover;
+//   }
+// .feedback {
+//   font-size: 14px;
+//   color: #b1b1b1;
+// }
+
+// .example-container {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+// .example-is-mobile .example-toolbar {
+//   position: fixed;
+//   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+//   z-index: 2;
+// }
+
+// h1.example-app-name {
+//   margin-left: 8px;
+// }
+
+// .example-sidenav-container {
+//   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+//      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+//   flex: 1;
+// }
+
+// .example-is-mobile .example-sidenav-container {
+//   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+//      `<body>` to be our scrolling element for mobile layouts. */
+//   flex: 1 0 auto;
+// }
+
+
+
+
+
+// h1{
+// font-size: 30px;
+// color: #fff;
+// text-transform: uppercase;
+// font-weight: 400;
+// text-align: center;
+// margin-bottom: 15px;
+// }
+// table{
+
+// table-layout: fixed;
+// }
+// .tbl-header{
+// background-color: rgba(255,255,255,0.3);
+// }
+
+// th{
+// padding: 10px 5px;
+// text-align: left;
+// font-weight: 500;
+// font-size: 12px;
+// color: #000;
+// text-transform: uppercase;
+// }
+// td{
+
+// text-align: left;
+// vertical-align:middle;
+// color: #000;
+// border-bottom: solid 1px rgba(255,255,255,0.1);
+// }
+// .error-count{
+//   color: red;
+//   font-size: 12px;
+//   text-transform: uppercase;
+//   text-align: left;
+
+// }
+
+// /* demo styles */
+
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+// body{
+// background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+// background: linear-gradient(to right, #25c481, #25b7c4);
+// font-family: 'Roboto', sans-serif;
+// }
+// section{
+// margin: 5px;
+// // background: -webkit-linear-gradient(left, #99a2a3, #00beee);
+// // background: linear-gradient(to right, #a4b5b6, #25b7c4);
+// font-family: 'Roboto', sans-serif;
+// }
+
+
+// /* follow me template */
+// .made-with-love {
+// margin-top: 40px;
+// padding: 10px;
+// clear: left;
+// text-align: center;
+// font-size: 10px;
+// font-family: arial;
+// color: #000;
+// }
+// .made-with-love i {
+// font-style: normal;
+// color: #000;
+// font-size: 14px;
+// position: relative;
+// top: 2px;
+// }
+// .made-with-love a {
+// color: #000;
+// text-decoration: none;
+// }
+// .made-with-love a:hover {
+// text-decoration: underline;
+// }
+
+
+// /* for custom scrollbar for webkit browser*/
+
+// // ::-webkit-scrollbar {
+// //   width: 6px;
+// // } 
+// // ::-webkit-scrollbar-track {
+// //   // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+// //   background: #f1f1f1;
+// // } 
+// // ::-webkit-scrollbar-thumb {
+// //   // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+// //   background: #c1c1c1;
+
+// // }
+
+
+// *{
+// box-sizing: border-box;
+// }
+
+
+
+// p{
+// display: none;
+// }
+
+// table{
+// border-collapse: collapse;
+// text-align: left;
+// // float:right !important;
+// // display:block;
+// // overflow:scroll;
+// // white-space: nowrap;
+
+
+// td, th{
+//   border-top: 1px solid #ECF0F1;
+//   padding: 5px;
+// }
+
+// td{
+//   border-left: 1px solid #ECF0F1;
+//   border-right: 1px solid #ECF0F1;
+  
+// }
+
+// th{
+//   background-color: #00beee;
+// }
+
+// tr:nth-of-type(even) td{
+//   background-color: lighten(#4e9ecd, 35%);
+// }
+
+// .total{
+//   th{
+//     background-color: white;
+//   }
+  
+//   td{
+//     text-align: right;
+//     font-weight: 400;
+    
+//   }
+// }
+// }
+
+// .mobile-header{
+//   display: none;
+// }
+
+// @media only screen and (max-width: 760px){
+// p{
+//   display: block;
+//   font-weight: bold;
+// }
+
+// table{
+//   tr{
+//     td:not(:first-child), th:not(:first-child), td:not(.total-val){
+//       display: none;
+//     }
+    
+//     &:nth-of-type(even) td:first-child{
+//       background-color: lighten(#4e9ecd, 35%);
+//     }
+//     &:nth-of-type(odd) td:first-child{
+//       background-color: white;
+//     }
+    
+//     &:nth-of-type(even) td:not(:first-child){
+//       background-color: white;
+//     }
+    
+//     th:first-child{
+//       width: 100%;
+//       display:block;
+//     }
+    
+//     th:not(:first-child){
+//       width: 40%;
+//       transition: transform 0.4s ease-out;
+//       transform:translateY(-9999px);
+//       position: relative;
+//       z-index: -1;
+//     }
+    
+//     td:not(:first-child){
+//       transition: transform 0.4s ease-out;
+//       transform:translateY(-9999px);
+//       width: 60%;
+//       position: relative;
+//       z-index: -1;
+//     }
+    
+//     td:first-child{
+//       display: block;
+//       cursor: pointer;
+//     }
+    
+//     &.total th{
+//       width: 25%;
+//       display: inline-block;
+//     }
+    
+//     td.total-val{
+//       display: inline-block;
+//       transform: translateY(0);
+//       width: 75%;
+//     }
+//   }
+// }
+// }
+// // table, td {
+// //   border: 1px solid black;
+// //   float:right !important;
+// // }
+
+// @media only screen and (max-width: 300px){
+// table{
+//   tr{
+//     th:not(:first-child){
+//       width: 50%;
+//       font-size: 14px;
+//     }
+    
+//     td:not(:first-child){
+//       width: 50%;
+//       font-size: 14px;
+//     }
+//   }
+// }
+// }
+
+// .cursorname{
+// cursor: pointer;
+// }
+
+
+
+// div {
+//   position: relative;
+// }
+
+// table {
+//   position: relative;
+//   border-collapse: collapse;
+// }
+
+// td,
+// th {
+//   padding: 0.25em;
+//   z-index: 6;
+// }
+
+// thead {
+//   position: -webkit-sticky; /* for Safari */
+//   position: sticky;
+//   top: 0;
+//   color: #FFF;
+//   border: 2px;
+//   z-index: 6;
+// }
+
+// thead th:first-child {
+//   left: 0;
+//   z-index: 10;
+// }
+
+// tbody{
+//   position: -webkit-sticky; /* for Safari */
+//   position: sticky;
+//   left: 0;
+//   background: #FFF;
+//   border-right: 1px solid #CCC;
+//   z-index: 4;
+// }
+
+// .fixed{
+//   position: -webkit-sticky; /* for Safari */
+//   position: sticky;
+//   left: 0;
+//   background: #FFF;
+//   border-right: 1px solid #CCC;
+//   z-index: 4;
+//   max-width: 200px;
+//   min-width: 200px;
+// }
+// td.cursorname.fixed{
+//   font-size: 15px;
+// }
+
+// .content1 {
+//   height: 100%;
+//   border-radius: 10px;
+
+
+//   overflow: auto;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// new 
+
 #content {
   margin: 40px auto;
   text-align: center;
@@ -38,15 +472,24 @@
     height: 21px;
     background-image: url("../../../assets/red.png"); 
     background-size: cover;
-    
   }
   .green {
     
     width: 21px;
     height: 21px;
-    background-image: url("../../../assets/green.png");
+    // line-height: 20px;
+    // cursor: pointer;
+    // text-align: center;
+    // -webkit-border-radius: 15%;
+    // display: inline-block;
+    // transform: rotate(45deg);
+    // height: 25px;
+    // width: 12px;
+    // margin-left: 60%; 
+    // border-bottom: 7px solid #78b13f;
+    // border-right: 7px solid #78b13f;
+    background-image: url("../../../assets/green-i.png");
     background-size: cover;
-    cursor: pointer;
   }
   .gray {
   
@@ -144,15 +587,9 @@ td{
 text-align: left;
 vertical-align:middle;
 color: #000;
-border-bottom: solid 1px rgba(255,255,255,0.1);
+// border-bottom: 1px solid #CCC;
 }
-.error-count{
-  color: red;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-align: left;
 
-}
 
 /* demo styles */
 
@@ -232,31 +669,34 @@ text-align: left;
 
 
 td, th{
-  border-top: 1px solid #ECF0F1;
+  // border-top: 1px solid #CCC;
   padding: 5px;
+  text-align: center;
 }
 
 td{
-  border-left: 1px solid #ECF0F1;
-  border-right: 1px solid #ECF0F1;
-  
+  // border-left: 1px solid #CCC;
+  // border-right: 1px solid #CCC;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 th{
-  background-color: #00beee;
+  background-color: #d9eaf4;
+  font-size: 14px
 }
 
 tr:nth-of-type(even) td{
-  background-color: lighten(#4e9ecd, 35%);
+  background-color: #f3f1f1;
 }
 
 .total{
   th{
-    background-color: white;
+    background-color: #ebebeb;
   }
   
   td{
-    text-align: right;
+    // text-align: right;
     font-weight: 400;
     
   }
@@ -399,13 +839,14 @@ tbody{
   position: sticky;
   left: 0;
   background: #FFF;
-  border-right: 1px solid #CCC;
+  // border-right: 1px solid #CCC;
   z-index: 4;
   max-width: 200px;
   min-width: 200px;
 }
 td.cursorname.fixed{
-  font-size: 15px;
+  font-size: 13px;
+  text-align: left;
 }
 
 .content1 {
@@ -414,4 +855,7 @@ td.cursorname.fixed{
 
 
   overflow: auto;
+}
+.focus{
+  opacity: 0;
 }

@@ -1,130 +1,127 @@
-<div class="modal" >
+<div class="modal">
 	<div class="modal-overlay" (click)="close($event)"></div>
 	<div class="modal--modal-content" *ngIf="modalTitle!='Infringement'">
-		<a class="modal--close-btn" (click)="close($event)">X</a>
+		<!-- <a class="modal--close-btn" (click)="close($event)">X</a> -->
+		<i class="fa fa-times cross-icon" (click)="close($event)"></i>
+		<h3 style="color: #00bbf9;">Details</h3>
+		<div class="row driver-row">
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Name</h6>
+				<p>{{modalText.name}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Code</h6>
+				<p>{{modalText.id}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>E-mail</h6>
+				<p>{{modalText.email}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Patente di guida</h6>
+				<p>{{modalText.Patentediguida}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Patente professionale</h6>
+				<p>{{modalText.Patenteprofessionale}}</p>
+			</div>
 
-		<div class="tbl-header"  >
-			<table cellpadding="0" cellspacing="0" border="0">
-				<thead style="background-color: #00beee">
-					<tr>
-						<th>Driver Details</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-		<div class="tbl-content">
-			<table cellpadding="0" cellspacing="0" border="0">
-				<tbody>
-					<tr>
-						<td>Name</td>
-						<td>{{modalText.name}}</td>
-					</tr>
-					<tr>
-						<td>Code</td>
-						<td>{{modalText.id}}</td>
-					</tr>
-					<tr>
-						<td>E-mail</td>
-						<td>{{modalText.email}}</td>
-					</tr>
-					<tr>
-						<td>Patente di guida</td>
-						<td>{{modalText.Patentediguida}}</td>
-					</tr>
-					<tr>
-						<td>Patente professionale</td>
-						<td>{{modalText.Patenteprofessionale}}</td>
-					</tr>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Scadenza carta</h6>
+				<p>{{modalText.Scadenzacarta}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Ruolo nell'azienda</h6>
+				<p>{{modalText.Ruolonellazienda}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Description</h6>
+				<p>{{modalText.desc}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Phone number</h6>
+				<p>{{modalText.phone}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6" style="border: 0;">
+				<h6>Card Expiry</h6>
+				<p>{{modalText.cardExpiry}}</p>
 
-					<tr>
-						<td>Scadenza carta</td>
-						<td>{{modalText.Scadenzacarta}}</td>
-					</tr>
-					<tr>
-						<td>Ruolo nell'azienda</td>
-						<td>{{modalText.Ruolonellazienda}}</td>
-					</tr>
-					<tr>
-						<td>Description</td>
-						<td>{{modalText.desc}}</td>
-					</tr>
-					<tr>
-						<td>Phone number</td>
-						<td>{{modalText.phone}}</td>
-					</tr>
-					<tr>
-						<td>Card Expiry</td>
-						<td>{{modalText.cardExpiry}}</td>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6" style="border: 0;">
+				<h6>Date of employment</h6>
+				<p>{{modalText.dateofemp | date}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6" style="border: 0;">
+				<h6>Creation Date</h6>
+				<p>{{modalText.joindate | date}}</p>
+			</div>
+		</div >
 
-					</tr>
-					<tr>
-						<td>Date of employment</td>
-						<td>{{modalText.dateofemp | date}}</td>
-					</tr>
-					<tr>
-						<td>Creation Date</td>
-						<td>{{modalText.joindate | date}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
 	</div>
 
 
-	<div class="modal--modal-content-inf" *ngIf="modalTitle=='Infringement'" >
-		<a class="modal--close-btn" (click)="close($event)">X</a>
-		<a class="modal--close-btn1 print" (click)="print($event)"></a>
-		<div id="modal-inf">
-			<div class="tbl-header" style=" background-color: rgba(255,255,255,0.3) !important; margin-top:1.5% !important;" >
-				<table cellpadding="0" cellspacing="0" border="0" class="infringement"
-				style="vertical-align:middle !important;font-size: 13px !important;width:100% !important;table-layout: fixed !important;font-weight: 500 !important;color:#fff !important;background-color: #00beee !important;text-align:center !important;"
-				>
-					<thead >
-						<tr>
-							<th colspan="4" class="title" style="padding: 20px 15px !important;
-							font-size: 16px !important;
-							text-transform: uppercase !important;
-							border-bottom: solid 1px rgba(255,255,255,0.1) !important;">INFRINGEMENT AND SANCTIONS</th>
-						</tr>
-						<tr>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important;">Account name</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important;">{{modalText.account_name}}</td>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">Company name</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important;">{{modalText.company_name}}</td>
-						</tr>
-						<tr>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">Inspecter name</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">{{modalText.inspecter_name}}</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">Site</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">{{modalText.site_name}}</td>
-						</tr>
-						<tr>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">Driver name</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">{{modalText.driver_name}}</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">Card number</td>
-							<td style="padding: 15px !important; border-bottom: solid 1px rgba(255,255,255,0.1) !important; ">{{modalText.driver_card}}</td>
-						</tr>
-					</thead>
-				</table>
+	<div class="modal--modal-content-inf" *ngIf="modalTitle=='Infringement'">
+		<i class="fa fa-times cross-icon" (click)="close($event)"></i>
+		<h3 style="color: #00bbf9;" class="in-h3">INFRINGEMENT AND SANCTIONS</h3>
+		<!-- <a class="modal--close-btn" (click)="close($event)">X</a> -->
+		<!-- <a class="modal--close-btn1 print" (click)="print($event)"></a> -->
+		<i class="fa fa-print print-btn" (click)="print($event)"></i>
+		<div class="row driver-row">
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Account name</h6>
+				<p>{{modalText.account_name}}</p>
 			</div>
-			<div class="tbl-content" style="overflow-x:auto !important; margin-top: 0px !important; border: 1px solid rgba(255,255,255,0.3) !important;">
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Company name</h6>
+				<p>{{modalText.company_name}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Inspecter name</h6>
+				<p>{{modalText.inspecter_name}}</p>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Site</h6>
+				<p>{{modalText.site_name}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Driver name</h6>
+				<p>{{modalText.driver_name}}</p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Card number</h6>
+				<p>{{modalText.driver_card}}</p>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Date of the Infringement</h6>
+				<p>{{modalText.driver_date}}</p>
+			</div>
+
+
+			<div class="col-md-4 col-sm-6 col-6">
+				<h6>Time of the Infringement</h6>
+				<p>{{modalText.driver_time}}</p>
+			</div>
+
+
+			<div class="col-md-4 col-sm-12 col-12">
+				<h6>Description</h6>
+				<p>{{modalText.driver_description}}</p>
+			</div>
+			</div>
+		<div id="modal-inf">
+
+			<div class="tbl-content"
+				style="overflow-x:auto !important; margin-top: 0px !important; border: 1px solid rgba(255,255,255,0.3) !important;">
 				<table cellpadding="0" cellspacing="0" border="0" class="infringement"
-				style="vertical-align:middle !important;text-align:center !important;font-weight: 500 !important;font-size: 13px !important; width:100% !important;table-layout: fixed !important;color:#fff !important;background-color: #00beee !important;"
-				>
-					<tbody >
-						
+					style="vertical-align:middle !important;text-align:center !important;font-weight: 500 !important;font-size: 13px !important; width:100% !important;table-layout: fixed !important;color:#fff !important;">
+					<tbody>
 						<tr>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">Date of the Infringement</td>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">{{modalText.driver_date}}</td>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">Time of the Infringement</td>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">{{modalText.driver_time}}</td>
-						</tr>
-						<tr>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">Description</td>
-							<td style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">{{modalText.driver_description}}</td>
-						</tr>
-						<tr>
-							<td colspan="4" style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;"><img src="{{modalText.driver_description_image}}" width="500px"/></td>
+							<td colspan="4"
+								style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">
+								<img src="{{modalText.driver_description_image}}" width="500px" />
+							</td>
 						</tr>
 					</tbody>
 				</table>

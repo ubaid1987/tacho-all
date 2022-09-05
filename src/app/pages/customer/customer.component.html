@@ -1,6 +1,61 @@
-<div class="mainDiv">
+<div class="container">
+    <div class="row">
+        <h3 class="main-heading">CUSTOMER DOCUMENTS</h3>
+    </div>
+        <form (ngSubmit)="onSubmit()" #customerForm="ngForm" name="customerForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="account_name">Account name</label>
+                    <input type="text" id="account_name" name="account_name" class="form-control"
+                    required [(ngModel)]="model.account_name" #account_name="ngModel" >
+                    <div [hidden]="account_name.valid || account_name.pristine" class="mat-error">
+                        Account Name is required
+                    </div>
+                  
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="company_name">Company name
+                    </label>
+                    <input type="text" id="company_name" name="company_name"
+                    required [(ngModel)]="model.company_name" #company_name="ngModel" class="form-control">
+                    <div [hidden]="company_name.valid || company_name.pristine" class="mat-error">
+                        Company Name is required
+                    </div>
+                </div>
+            </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="inspecter_name">Inspecter name</label>
+                        <input type="text" id="inspecter_name" name="inspecter_name"
+                        required [(ngModel)]="model.inspecter_name" #inspecter_name="ngModel" class="form-control">
+                        <div [hidden]="inspecter_name.valid || inspecter_name.pristine" class="mat-error">
+                            Inspecter Name is required
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="site_name">Site Name</label>
+                        <input type="text" id="site_name"  name="site_name"
+                        required [(ngModel)]="model.site_name" #site_name="ngModel" class="form-control">
+                        <div [hidden]="site_name.valid || site_name.pristine" class="mat-error">
+                            Site Name is required
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <!-- <button ng-click="submit()" [disabled]="!customerForm.form.valid">Submit</button> customerForm.reset() -->
+                        <button class="ct-btn" mat-raised-button type="button"   [disabled]="!customerForm.form.valid" (click)="newCustomer(); ">Submit</button>
+                    </div>
+                </div>
+            
+        </form>
+</div>
+
+<!-- <div class="mainDiv">
     <div class="container">
-        <div class="title">CUSTOMER DOCUMENTS</div>
+        <div class="title"></div>
         <div class="mainBody">
             <form (ngSubmit)="onSubmit()" #customerForm="ngForm" name="customerForm">
                 <div class="inputBoxes">
@@ -41,13 +96,12 @@
                 </div>
                 <div class="inputBoxes">
                     <label>&nbsp;</label>
-                    <!-- <button ng-click="submit()" [disabled]="!customerForm.form.valid">Submit</button> customerForm.reset() -->
+                    
                     <button mat-raised-button type="button"   [disabled]="!customerForm.form.valid" (click)="newCustomer(); ">Submit</button>
                 </div>
                 
             </form>
-            <!-- <p>The input's valid state is:</p>
-                    <h1>{{customerForm.company_name.$valid}}</h1> -->
+         
         </div>
     </div>
-</div>
+</div> -->
