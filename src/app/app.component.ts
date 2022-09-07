@@ -14,6 +14,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 export class AppComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+  mode: boolean = true;
 
   constructor(private observer: BreakpointObserver, private router: Router) {}
 
@@ -25,9 +26,12 @@ export class AppComponent {
         if (res.matches) {
           this.sidenav.mode = 'over';
           this.sidenav.close();
+          console.log('over')
         } else {
           this.sidenav.mode = 'side';
           this.sidenav.open();
+          console.log('side')
+
         }
       });
 
@@ -41,5 +45,8 @@ export class AppComponent {
           this.sidenav.close();
         }
       });
+  }
+  changeMode(){
+    this.mode = !this.mode
   }
 }
