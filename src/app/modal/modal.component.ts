@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit {
         this.closeModal.emit(event);
     }
     print(e:any){
-        var printContent = document.getElementById('modal-inf');
+        var printContent = document.getElementById('print-view');
         var WinPrint:any = window.open('', '', 'width=900,height=650');
         WinPrint.document.write(printContent?.innerHTML);
         WinPrint.document.close();
