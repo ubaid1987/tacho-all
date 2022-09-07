@@ -23,9 +23,10 @@ import { ModalComponent } from './modal/modal.component';
 import { InfringementComponent } from './pages/infringement/infringement.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { UnitComponent } from './pages/unit/unit.component';
+import { AutoFocusDirectiveDirective } from './auto-focus-directive.directive';
 @NgModule({
   declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent,
-    ModalComponent, InfringementComponent, CustomerComponent,UnitComponent],
+    ModalComponent, InfringementComponent, CustomerComponent,UnitComponent,AutoFocusDirectiveDirective ],
   imports: [
     BrowserModule,
     AppRoutingModule,

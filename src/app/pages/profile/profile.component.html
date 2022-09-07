@@ -31,7 +31,9 @@
 
           <div class="circle orange" *ngIf="techo1.colorcode=='nocolor'"></div>
         </td>
-        <td style="width: 0 !important;     padding: 0;opacity: 0;"><input class="focus" autofocus  type="text"></td>
+        <td style="width: 0 !important;     padding: 0;opacity: 0;">
+          <input class="focus" appAutoFocusDirective  type="text">
+        </td>
       </tr>
     </tbody>
   </table>
