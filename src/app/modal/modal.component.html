@@ -66,40 +66,40 @@
 		<!-- <a class="modal--close-btn" (click)="close($event)">X</a> -->
 		<!-- <a class="modal--close-btn1 print" (click)="print($event)"></a> -->
 		<i class="fa fa-print print-btn" (click)="print($event)"></i>
-		<div class="row driver-row">
-			<div class="col-md-4 col-sm-6 col-6">
+		<div class="row driver-row ">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Account name</h6>
 				<p>{{modalText.account_name}}</p>
 			</div>
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Company name</h6>
 				<p>{{modalText.company_name}}</p>
 			</div>
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Inspecter name</h6>
 				<p>{{modalText.inspecter_name}}</p>
 			</div>
 
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Site</h6>
 				<p>{{modalText.site_name}}</p>
 			</div>
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Driver name</h6>
 				<p>{{modalText.driver_name}}</p>
 			</div>
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Card number</h6>
 				<p>{{modalText.driver_card}}</p>
 			</div>
 
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Date of the Infringement</h6>
 				<p>{{modalText.driver_date}}</p>
 			</div>
 
 
-			<div class="col-md-4 col-sm-6 col-6">
+			<div class="col-md-4 col-sm-6 col-6 print-col">
 				<h6>Time of the Infringement</h6>
 				<p>{{modalText.driver_time}}</p>
 			</div>
@@ -129,4 +129,82 @@
 		</div>
 	</div>
 
+
+	
+
+</div>
+
+
+<div id="print-view" class="modal--modal-content-inf d-noe">
+	<i class="fa fa-times cross-icon" (click)="close($event)"></i>
+	<h3 style="color: #00bbf9;font-family: arial;" class="in-h3">INFRINGEMENT AND SANCTIONS</h3>
+	<!-- <a class="modal--close-btn" (click)="close($event)">X</a> -->
+	<!-- <a class="modal--close-btn1 print" (click)="print($event)"></a> -->
+	<i class="fa fa-print print-btn" (click)="print($event)"></i>
+
+	<table>
+		<tr>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Account name</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Company name</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Inspecter name</th>
+		</tr>
+	<tr>
+		<td style="text-align: center; border-bottom: 1px solid grey; padding: 10px; font-family: arial;">
+			{{modalText.account_name}}
+		</td>
+		<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">
+			{{modalText.company_name}}
+		</td>
+		<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">
+			{{modalText.inspecter_name}}
+		</td>
+	</tr>
+
+		<tr>
+			<th style="text-align: center; padding: 10px; font-family: arial;">
+				Site
+			</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Driver name</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Card number</th>
+		</tr>
+		<tr>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">
+				{{modalText.site_name}}
+			</td>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">
+				{{modalText.driver_name}}
+			</td>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">
+				{{modalText.driver_card}}
+			</td>
+		</tr>
+		<tr>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Date of the Infringement</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Time of the Infringement</th>
+			<th style="text-align: center; padding: 10px; font-family: arial;">Description</th>
+		</tr>
+		<tr>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">{{modalText.driver_date}}</td>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">{{modalText.driver_time}}</td>
+			<td style="text-align: center; padding: 10px; font-family: arial;border-bottom: 1px solid grey">{{modalText.driver_description}}</td>
+		</tr>
+	</table>
+
+	<div>
+
+		<div class="tbl-content"
+			style="overflow-x:auto !important; margin-top: 0px !important; border: 1px solid rgba(255,255,255,0.3) !important;">
+			<table cellpadding="0" cellspacing="0" border="0" class="infringement"
+				style="vertical-align:middle !important;text-align:center !important;font-weight: 500 !important;font-size: 13px !important; width:100% !important;table-layout: fixed !important;color:#fff !important;">
+				<tbody>
+					<tr>
+						<td colspan="4"
+							style="padding: 15px !important;border-bottom: solid 1px rgba(255,255,255,0.1) !important;">
+							<img src="{{modalText.driver_description_image}}" width="500px" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
