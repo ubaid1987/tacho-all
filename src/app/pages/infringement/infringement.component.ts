@@ -55,17 +55,17 @@ description_data:any={}
     this.sessionID = sid ? sid : sessionStorage.getItem('sid');
   
   
-    this.description_data['Exceeded daily driving time of 9 h']= 'https://topfly.pro/wp-content/uploads/2022/04/Exceeded-daily-driving-time-of-9-h.png'
-    this.description_data['Exceeded extended daily driving time of 10 h']='https://topfly.pro/wp-content/uploads/2022/04/Exceeded-extended-daily-driving-time-of-10-h-.png'
-    this.description_data['Exceeded weekly driving time of 56 h']='https://topfly.pro/wp-content/uploads/2022/04/Exceeded-weekly-driving-time-of-56-h-.png'
-    this.description_data['Exceeded accumulated two-week driving time of 90 h']='https://topfly.pro/wp-content/uploads/2022/04/Exceeded-accumulated-two-week-driving-time-of-90-h- .png'
-    this.description_data['Exceeded uninterrupted driving time of 4 h 30 min']='https://topfly.pro/wp-content/uploads/2022/04/Exceeded-uninterrupted-driving-time-of-4-h-30-min-.png'
-    this.description_data['Insufficient daily rest period of less than 11 h']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-daily-rest-period-of-less-than-11-h-.png'
-    this.description_data['Insufficient reduced daily rest period of less than 9 h']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
-    this.description_data['Insufficient split daily rest period of less than 3 h + 9h']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-split-daily-rest-period-of-less-than-3-h-9-h-.png'
-    this.description_data['Insufficient weekly rest period of less than 45 h']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-weekly-rest-period-of-less-than-45-h.png'
-    this.description_data['Insufficient reduced weekly rest period of less than 24 h']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-reduced-weekly-rest-period-of-less-than-24-h-.png'
-    this.description_data['Insufficient daily rest period of less than 9 h for crew']='https://topfly.pro/wp-content/uploads/2022/04/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
+    this.description_data['Exceeded daily driving time of 9 h']= 'assets/Exceeded-daily-driving-time-of-9-h.png'
+    this.description_data['Exceeded extended daily driving time of 10 h']='assets/Exceeded-extended-daily-driving-time-of-10-h-.png'
+    this.description_data['Exceeded weekly driving time of 56 h']='assets/Exceeded-weekly-driving-time-of-56-h-.png'
+    this.description_data['Exceeded accumulated two-week driving time of 90 h']='assets/Exceeded-accumulated-two-week-driving-time-of-90-h-.png'
+    this.description_data['Exceeded uninterrupted driving time of 4 h 30 min']='assets/Exceeded-uninterrupted-driving-time-of-4-h-30-min-.png'
+    this.description_data['Insufficient daily rest period of less than 11 h']='assets/Insufficient-daily-rest-period-of-less-than-11-h-.png'
+    this.description_data['Insufficient reduced daily rest period of less than 9 h']='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
+    this.description_data['Insufficient split daily rest period of less than 3 h + 9h']='assets/Insufficient-split-daily-rest-period-of-less-than-3-h-9-h-.png'
+    this.description_data['Insufficient weekly rest period of less than 45 h']='assets/Insufficient-weekly-rest-period-of-less-than-45-h.png'
+    this.description_data['Insufficient reduced weekly rest period of less than 24 h']='assets/Insufficient-reduced-weekly-rest-period-of-less-than-24-h-.png'
+    this.description_data['Insufficient daily rest period of less than 9 h for crew']='assets/Insufficient-reduced-daily-rest-period-of-less-than-9-h-.png'
      
   }
 

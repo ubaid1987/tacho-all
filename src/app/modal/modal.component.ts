@@ -19,14 +19,34 @@ export class ModalComponent implements OnInit {
     close(event:any) {
         this.closeModal.emit(event);
     }
-    print(e:any){
-        var printContent = document.getElementById('print-view');
-        var WinPrint:any = window.open('', '', 'width=900,height=650');
-        WinPrint.document.write(printContent?.innerHTML);
-        WinPrint.document.close();
-        WinPrint.focus();
-        WinPrint.print();
-        WinPrint.close();
+    async print(e:any){
+        const img:any = document.getElementById('source-image')
+        await fetch(img.src)
+        .then(res => res.blob())
+        .then(blob => {
+        const file = new File([blob], 'source.png', blob)
+        var reader = new FileReader();
+        reader.onloadend = function() {
+          const pimg:any=document.getElementById("print-image")
+          pimg.src=reader.result
+          console.log(pimg);
+        }
+        reader.readAsDataURL(file);
+        })
+        setTimeout(function(){
+            var printContent = document.getElementById('print-view');
+            var WinPrint:any = window.open('', '', 'width=900,height=650');
+            WinPrint.document.write(printContent?.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+        },1000)
+        
 
     }
+
+    async encodeImageFileAsURL() {
+
+      }
 } 
