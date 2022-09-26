@@ -100,7 +100,7 @@ export class UnitComponent implements OnInit {
             this.doProcessData(item_id,res1);
             let unitData = this.doPopulateData(item_id);
             this.doPopulateToFront(item_id,index,unitData)
-           // console.log('len',item_array.length,'index',index)
+            console.log('len',item_array.length,'index',index)
             if(item_array.length== (index+1))
                 this.doPopulateHeader()
 
@@ -109,10 +109,22 @@ export class UnitComponent implements OnInit {
         })//end foreach
 
     })//end first api
+    //console.log(this.techoGraphData)
   }
   doProcessData( unit_id:any,fileDetails: any) {
 
       console.log(unit_id,this.unit_hash.get(unit_id),'files:',fileDetails.length)
+      if(fileDetails.length == undefined){
+        let Date1 = new Date();
+        if(unit_id in this.unit_data ==false)
+        this.unit_data[unit_id] =new Array();
+
+        let data1 = { month:"",date: Date1.getDate(),  filepresent: false, name: '', dates: '',ct:'', mt: '', colorcode: 'gray'  }
+        
+
+        //console.log( data1.mt,mt_tmp.getDate(),mt_tmp.getMonth(),mt_tmp.getFullYear())
+        this.unit_data[unit_id].push(data1)
+      }else {
       let Date1 = new Date();
       fileDetails.forEach((data: any) => {
         if(unit_id in this.unit_data ==false)
@@ -128,6 +140,7 @@ export class UnitComponent implements OnInit {
             this.unit_data[unit_id].push(data1)
 
         });//end  loop
+      }
         
       
     } //end doProcessData()
@@ -164,7 +177,7 @@ export class UnitComponent implements OnInit {
         } else {
           this.header1[inde].count = this.header1[inde].count + 1;
         }
-        console.log(this.unit_data[unit_id])
+      //  console.log(this.unit_data[unit_id])
         for (let key in this.unit_data[unit_id]){
           let dobj = this.unit_data[unit_id][key];
           var d = new Date(dobj.mt * 1000);
